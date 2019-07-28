@@ -1,0 +1,63 @@
+<div fxFlex fxLayout="column" fxLayoutGap="32px" style="padding:20px">
+  <div fxLayout="row" fxLayoutGap="32px">
+<div fxFlex="50%" ></div>
+   <div fxFlex="90%" class="card card-cascade">
+
+     <div fxLayout class="card text-white bg-primary" >
+
+       <h4 fxFlex fxLayoutAlign ="flex-start" class="card-body">Primary Balance </h4>
+
+       <h4 fxFlex fxLayoutAlign ="flex-end" class="card-body">{{primaryBalance}} $</h4>
+
+     </div>
+     <div class="card-footer text-muted text-center">
+       <a routerLink="/home"> Home</a>
+     </div>
+   </div>
+  </div>
+<div>
+<div fxLayoutAlign="flex-end center" class="filter">
+
+  <mat-form-field fxFlex="200px">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<mat-table [dataSource]="dataSource" matSort >
+
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Post Date</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.date| date}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.description}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.type }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.status }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="amount">
+    <mat-header-cell *matHeaderCellDef mat-sort-header >Amount</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.amount}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="availableBalance">
+    <mat-header-cell *matHeaderCellDef mat-sort-header > Available Balance</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.availableBalance}}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+  <mat-paginator [pageSizeOptions]="[3,5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+</div>

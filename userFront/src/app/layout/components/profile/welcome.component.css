@@ -1,0 +1,22 @@
+.recipient{
+  padding: 20px;
+  padding-left: 100px;
+
+}
+.paAndsa{
+  padding: 40px;
+}
+.account{
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  color: deeppink;
+
+}
+.card card-cascade{
+  width: 100%;
+}
+/*.all{*/
+  /*background-color: lightblue;*/
+/*}*/

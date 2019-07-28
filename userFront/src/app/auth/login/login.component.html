@@ -1,0 +1,32 @@
+<div fxLayout="column">
+<mat-toolbar color="primary">Fish Bank</mat-toolbar>
+  <form name="newUserForm" #newUserForm="ngForm" (ngSubmit)="onSubmit()" fxLayout="column" class="loggin">
+
+      <mat-form-field  >
+        <mat-icon matPrefix>mail</mat-icon>
+      <input style="font-size: 30px" type="email" matInput  placeholder="Your Username" name="email" [(ngModel)]="newUser.email" required>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input style="font-size: 50px" matInput [type]="show ? 'text' : 'password'" placeholder="Password" name="password" [(ngModel)]="newUser.password" required>
+        <span *ngIf="passwordd"  matSuffix > <a (click)="password()"
+                                                style="cursor: pointer; color: blue;font-size: 40px" class="fa fa-eye"></a>  </span>
+        <span *ngIf="!passwordd"  matSuffix > <a (click)="password()"
+                                                 style="cursor: pointer;color: blue;font-size: 40px" matSuffix  class="fa fa-eye-slash"></a> </span>
+      </mat-form-field>
+
+    <div fxLayout="column"  fxLayoutGap="20px">
+
+      <button mat-raised-button color="primary" [disabled]="newUserForm.invalid" type="submit">Login</button>
+
+      <button mat-raised-button color="primary" routerLink="/signup">SignUp</button>
+     <mat-spinner  class="loading" *ngIf="isLoading" ></mat-spinner>
+    </div>
+    <span class="errorMess"> {{errorMsg}}</span>
+  </form>
+</div>
+
+
+

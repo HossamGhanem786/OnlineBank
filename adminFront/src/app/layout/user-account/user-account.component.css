@@ -1,0 +1,7 @@
+
+mat-cell, .mat-cell {
+  font-size: small;
+  display:block;
+  padding: 15px 20px 15px 10px;
+  width: 100%;
+}

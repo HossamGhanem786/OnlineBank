@@ -1,0 +1,26 @@
+
+<section style="padding: 30px" fxLayout.xs ="column" fxLayout ="row" fxLayoutGap="25px">
+  <div  fxFlex="50%" fxLayout.xs ="column" fxLayout ="column"  fxLayoutGap="25px">
+  <div class="card" style="font-size: 20px">
+    <div class="card-header bg-primary text-white" >Primary Balance<span class="pull-right">{{primaryBalance}} $</span></div>
+    <div class="card-footer text-center"><a style="cursor: pointer; color: blue;" [routerLink]="['/home','primary']"> View Details</a></div>
+  </div>
+
+  <div class="card" style="font-size: 20px">
+    <div class="card-header bg-primary text-white">Savings Balance<span class="pull-right">{{savingsBalance}} $</span></div>
+    <div class="card-footer text-center"><a style="cursor: pointer; color: blue;" [routerLink]="['/home','savings']"> View Details</a></div>
+  </div>
+  </div>
+<div class="container" style="height: 80%" fxLayout fxLayout.xs="column"  fxLayoutAlign="space-around"  fxLayoutGap.xs="5px">
+  <div fxFlex="40%" class="card" >
+    <div fxFlex="50%" class="card-header bg-primary text-center text-white"><span style="font-size: 30px">Deposit </span></div>
+    <div fxFlex="50%" class="card-footer text-center" > <a  [routerLink]="['/home','deposit']" style="cursor: pointer; color: blue;font-size: 30px">GOoo..</a></div>
+  </div>
+
+  <div fxFlex="40%" class="card" >
+    <div fxFlex="50%" class="card-header bg-primary text-center text-white"><span style="font-size: 30px">Withdraw</span></div>
+    <div fxFlex="50%"  class="card-footer text-center"> <a [routerLink]="['/home','withdraw']" style="cursor: pointer; color: blue;font-size: 30px"> GOoo..</a></div>
+  </div>
+</div>
+</section>
+

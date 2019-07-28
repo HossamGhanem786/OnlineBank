@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">Fish Bank</mat-toolbar>
+<mat-toolbar *ngIf="isAuth" >
+
+  <div fxFlex fxLayout  fxLayoutAlign="flex-start"><a [routerLink]="['/home']">Home</a>
+    <div fxFlex></div>
+    <div fxFlex>
+      <a class="nav-link " [routerLink]="['userAccount']"
+         role="button" aria-haspopup="true"
+         aria-expanded="false">User Account</a>
+    </div>
+
+    <div fxFlex ></div>
+
+
+    <div fxFlex>
+      <a class="nav-link " [routerLink]="['/home','appointment']"
+         role="button" aria-haspopup="true"
+         aria-expanded="false">Appointment</a>
+    </div>
+    <div fxFlex ></div>
+
+  </div>
+
+  <div fxFlex fxLayout  fxLayoutAlign="flex-end" fxHide.xs>
+    <a class="nav-link"
+       style="cursor: pointer" (click)="onLogout()"
+       role="button" aria-haspopup="true"
+       aria-expanded="false"><span style="color: blue">Logout</span></a>
+  </div>
+</mat-toolbar>
+

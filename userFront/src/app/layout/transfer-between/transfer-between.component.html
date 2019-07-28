@@ -1,0 +1,35 @@
+
+    <form name="newTransferForm" #newTransferForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <div class="example-container" >
+        <div class="card-footer text-muted text-center">Transfer Between Accounts</div>
+        <mat-form-field>
+          <mat-select name="transferFrom" [(ngModel)]="newTransferBetween.transferFrom"
+                      placeholder="Please select the account you would like to transfer from">
+            <mat-option value="Primary">PrimaryAccount</mat-option>
+            <mat-option value="Savings">SavingsAccount</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select name="transferTo" [(ngModel)]="newTransferBetween.transferTo"
+                      placeholder="Please select the account you would like to transfer to">
+            <mat-option value="Primary">PrimaryAccount</mat-option>
+            <mat-option value="Savings">SavingsAccount</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input  matInput
+                  placeholder="Please specify the amount you would like to transfer" name="amount"
+                  [(ngModel)]="newTransferBetween.amount">
+        </mat-form-field>
+
+        <div fxLayout="column" fxLayoutGap="20px">
+  <button mat-raised-button color="primary" type="submit">Transfer</button>
+      <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+
+

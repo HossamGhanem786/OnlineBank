@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">Fish Bank</mat-toolbar>
+<mat-toolbar *ngIf="isAuth" >
+
+  <div fxFlex fxLayout  fxLayoutAlign="flex-start" ><a [routerLink]="['/home']">Home</a>
+    <div fxFlex></div>
+    <div fxFlex>
+      <a class="nav-link dropdown-toggle"
+         data-toggle="dropdown" href="#"
+         role="button" aria-haspopup="true"
+         aria-expanded="false">Accounts</a>
+      <div  class="dropdown-menu">
+        <a class="dropdown-item" [routerLink]="['primary']" >Primary</a>
+        <a class="dropdown-item" [routerLink]="['/home','savings']">Savings</a>
+      </div>
+    </div>
+
+    <div fxFlex ></div>
+
+
+    <div fxFlex>
+      <a class="nav-link dropdown-toggle"
+         data-toggle="dropdown" href="#"
+         role="button" aria-haspopup="true"
+         aria-expanded="false">Transfer</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" [routerLink]="['/home','betweenAccount']">Between Accounts</a>
+        <a class="dropdown-item" [routerLink]="['/home','toSomeoneElse']">To Someone else</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" [routerLink]="['/home','recipient']">Add\Edit Receipt</a>
+      </div>
+    </div>
+    <div fxFlex ></div>
+
+    <div fxFlex>
+      <a class="nav-link dropdown-toggle"
+         data-toggle="dropdown" href="#"
+         role="button" aria-haspopup="true"
+         aria-expanded="false">Appointments</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" [routerLink]="['/home','appointment']">Schedule an Appointment </a>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout  fxLayoutAlign="flex-end" >
+    <a class="nav-link dropdown-toggle"
+       data-toggle="dropdown" href="#"
+       role="button" aria-haspopup="true"
+       aria-expanded="false">Me</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" [routerLink]="['/home','profile']">Profile</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" style="cursor: pointer" (click)="onLogout()">Logout </a>
+    </div>
+  </div>
+</mat-toolbar>
+

@@ -1,0 +1,45 @@
+<div class="appointment">
+  <form name="newAppointmentForm" #newAppointmentForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="example-container" >
+ <div>
+   <strong> Schedule An Appointment</strong>
+ </div>
+
+      <mat-form-field>
+        <input matInput [owlDateTime]="dt2" placeholder="Date Time"
+               [(ngModel)]="appointment.date"  name="date" required>
+        <span [owlDateTimeTrigger]="dt2" matSuffix ><i class="fa fa-calendar"></i></span>
+        <owl-date-time #dt2 format="YYYY-MM-DD hh:mm "></owl-date-time>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-select name="location" [(ngModel)]="appointment.location"
+                    placeholder="Pick a location">
+          <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea  matInput placeholder="Notes" name="description"
+                   [(ngModel)]="appointment.description" required></textarea>
+      </mat-form-field>
+
+      <span fxFlex >
+  <span fxFlex="flex-start">
+  <button mat-raised-button color="primary" [disabled]="newAppointmentForm.invalid "
+          type="submit">Submit Scheduling</button>
+  </span>
+
+  <span fxFlex="flex-end">
+  </span>
+
+</span>
+    </div>
+  </form>
+
+</div>
+
+

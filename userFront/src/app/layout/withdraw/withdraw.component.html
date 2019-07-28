@@ -1,0 +1,27 @@
+<form fxFlex="60%" name="newWithdawForm" #newWithdawForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <div  fxLayout="column"  style="padding: 70px" fxLayoutAlign="center">
+
+    <div class="card-footer text-muted text-center">Withdraw</div>
+
+        <mat-form-field>
+          <mat-select name="accountType" [(ngModel)]="newWithdraw.accountType"
+                      placeholder="Please select the account you would like to withdraw">
+            <mat-option value="Primary">PrimaryAccount</mat-option>
+            <mat-option value="Savings">SavingsAccount</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input  matInput
+                  placeholder="Please specify the amount you would like to withdraw" name="amount"
+                  [(ngModel)]="newWithdraw.amount">
+        </mat-form-field>
+
+    <div fxLayout="column" fxLayoutGap="20px">
+  <button mat-raised-button color="primary" type="submit">Withdraw</button>
+
+      <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+    </div>
+      </div>
+    </form>

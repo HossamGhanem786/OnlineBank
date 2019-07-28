@@ -1,0 +1,110 @@
+
+<div style="padding-top: 50px"></div>
+<div  class="card-footer text-muted text-center" >List Of Appointments</div>
+<div >
+  <mat-table [dataSource]="dataSource" >
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef >Appointment Id</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef >User Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.user.username}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef >Date</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.date | date: 'yyyy-MM-dd  hh:mm a'}}</mat-cell>
+    </ng-container>
+    <!--| date: 'YYYY-MM-DD hh:mm'-->
+
+
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef >Location</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.location }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef >Description</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.description }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="confirmed">
+      <mat-header-cell *matHeaderCellDef >Confirmed?</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{element.confirmed}}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef>Action </mat-header-cell>
+      <mat-cell *matCellDef="let element" >
+        <a [hidden]="element.confirmed" (click)="comfirmAppointment(element.id)" style="cursor: pointer;color: blue" >Confirm</a>
+        <p [hidden]="!element.confirmed" >Confirmed</p>
+
+      </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+<!--</div>-->
+
+
+
+<!--<div class="transfer">-->
+  <!--<form name="newAppointmentForm" #newAppointmentForm="ngForm" (ngSubmit)="onSubmit()">-->
+
+    <!--<div class="example-container" >-->
+ <!--<div>-->
+   <!--<strong> Schedule An Appointment</strong>-->
+ <!--</div>-->
+        <!--&lt;!&ndash;<mat-form-field>&ndash;&gt;-->
+          <!--&lt;!&ndash;<input  matInput placeholder="Pick a date and time" [matDatepicker]="picker"&ndash;&gt;-->
+                 <!--&lt;!&ndash;[(ngModel)]="appointment.date"  name="date" required>&ndash;&gt;-->
+          <!--&lt;!&ndash;<mat-datepicker-toggle matSuffix  [for]="picker" format="YYYY-MM-DD hh:mm a"></mat-datepicker-toggle>&ndash;&gt;-->
+          <!--&lt;!&ndash;<mat-datepicker #picker></mat-datepicker>&ndash;&gt;-->
+        <!--&lt;!&ndash;</mat-form-field>&ndash;&gt;-->
+
+
+      <!--<mat-form-field>-->
+        <!--<input matInput [owlDateTime]="dt2" placeholder="Date Time"-->
+               <!--[(ngModel)]="appointment.date"  name="date" required>-->
+        <!--<span [owlDateTimeTrigger]="dt2" matSuffix ><i class="fa fa-calendar"></i></span>-->
+        <!--<owl-date-time #dt2 format="YYYY-MM-DD hh:mm "></owl-date-time>-->
+      <!--</mat-form-field>-->
+
+
+      <!--<mat-form-field>-->
+        <!--<mat-select name="location" [(ngModel)]="appointment.location"-->
+                    <!--placeholder="Pick a location">-->
+          <!--<mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>-->
+
+        <!--</mat-select>-->
+      <!--</mat-form-field>-->
+
+      <!--<mat-form-field>-->
+        <!--<textarea  matInput placeholder="Notes" name="description"-->
+                   <!--[(ngModel)]="appointment.description" required></textarea>-->
+      <!--</mat-form-field>-->
+
+      <!--<span fxFlex >-->
+  <!--<span fxFlex="flex-start">-->
+  <!--<button mat-raised-button color="primary" [disabled]="newAppointmentForm.invalid "-->
+          <!--type="submit">Submit Scheduling</button>-->
+  <!--</span>-->
+
+  <!--<span fxFlex="flex-end">-->
+  <!--</span>-->
+
+<!--</span>-->
+    <!--</div>-->
+  <!--</form>-->
+
+<!--</div>-->
+
+
