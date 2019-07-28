@@ -7,10 +7,9 @@ Description
 
 
 1-UserFrontPage:
--user if new user can signup or already user can login.
--user have two accounts(primary account,savings account).
--two accounts of user any transactions made in it recorded in each account .
+-user if new user can signup or already user can login, he have two accounts(primary account,savings account),two accounts of user any ,transactions made in it recorded in each account .
 -user can make transactions such as :
+
 a-deposit.
 b-withdraw.
 c-transfer between accounts primary account and savings account.
