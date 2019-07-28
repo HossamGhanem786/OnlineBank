@@ -8,24 +8,12 @@ Description
 
 1-UserFrontPage:
 -user if new user can signup or already user can login, he have two accounts(primary account,savings account),two accounts of user any ,transactions made in it recorded in each account .
--user can make transactions such as :
-
-a-deposit.
-b-withdraw.
-c-transfer between accounts primary account and savings account.
-d-transfer to any person by aacount number. 
-e-add/edit recipient.
-f- profile have primary account number,savings account number and also change username, first name ,last name and your password.
- g-user can schedule an appointment to do any thing .  
+-user can make transactions such as deposit,withdraw,transfer between accounts primary account and savings account,transfer to any person by aacount number,add/edit recipient, profile have primary account number,savings account number and also change username, first name ,last name and your password and user can schedule an appointment to do any thing .  
  
  
  
 2-AdminFrontPage 
- -admin has only authority to login if any user try to login can not login because dont have  authority
-  -admin can:
- a-activated user and deactivated 
- b- have all informations about users and thier accounts
- c-confirm appoointments
+admin has only authority to login if any user try to login can not login because dont have  authority,admin can: activated user and deactivated , have all informations about users and thier accounts and confirm appoointments
              
              
  How to import source code?
